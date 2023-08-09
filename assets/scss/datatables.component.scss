@@ -1,0 +1,245 @@
+// @import "~@swimlane/ngx-datatable/index.css";
+// @import "~@swimlane/ngx-datatable/themes/bootstrap.scss";
+// @import "~@swimlane/ngx-datatable/assets/icons.css";
+// @import "app/layout/scss/base/colors";
+// @import "app/layout/scss/base/components/include"; // Components includes
+
+// variable declaration
+// $datatables-bg-header-color: $table-head-bg;
+// $datatables-text-color: $gray-400;
+// $datatables-border-color: $border-color;
+// $datatables-footer-text-color: $text-muted;
+// $datatables-dark-text-color: $theme-dark-body-color;
+// $datatables-dark-footer-bg-color: $theme-dark-card-bg;
+// $datatables-dark-border-color: $theme-dark-border-color;
+// $datatables-dark-header-bg-color: $theme-dark-table-header-bg;
+// $datatables-dark-body-bg-color: $theme-dark-table-bg;
+// $datatables-dark-active-bg-color: $theme-dark-card-bg;
+
+.ngx-datatable {
+  &.bootstrap {
+    &.core-bootstrap {
+      &.height-70-vh {
+        height: 70vh !important;
+      }
+
+      .datatable-header {
+        background-color: #ddd;
+        text-transform: uppercase;
+        height: 40px !important;
+        border-top: 1px solid #ddd;
+
+        .datatable-header-cell {
+          border-bottom: 0;
+          padding: 0.75rem 1rem;
+          font-weight: bold;
+          font-size: 0.8rem;
+        }
+        // sort-icon positioning
+        .sort-btn {
+          &:before {
+            font-size: 1.3rem;
+          }
+        }
+      }
+
+      .datatable-body-row {
+        border-color: #ddd;
+
+        &.datatable-row-even {
+          background-color: initial;
+        }
+
+        &.active {
+          background-color: #ddd;
+          color: #ddd;
+        }
+
+        .datatable-body-cell-label {
+          .cell-line-height {
+            line-height: 1.25;
+          }
+        }
+
+        .datatable-body-cell {
+          padding: 0.75rem 1rem;
+          display: flex;
+          align-items: center;
+        }
+      }
+
+      .datatable-footer {
+        background-color: #ddd;
+        color: #ddd;
+        overflow: hidden;
+        margin-bottom: 1rem;
+
+        .datatable-pager {
+          a {
+            color: #ddd;
+            line-height: 20px;
+          }
+
+          ul {
+            li:not(.disabled) {
+              &.active,
+              &.active:hover {
+                vertical-align: sub;
+                a {
+                  background-color: #ddd !important;
+                  color: #ddd !important;
+                  border-radius: 50%;
+                  width: 32px;
+                  height: 32px;
+                  padding: 5px;
+                }
+              }
+              &:hover {
+                a {
+                  background-color: transparent !important;
+                  color: #ddd !important;
+                }
+              }
+            }
+
+            li {
+              margin: 2px 0px 11px 0px !important;
+              &:not(.disabled):hover {
+                a {
+                  background-color: #ddd;
+                  color: #ddd;
+                }
+              }
+
+              &.disabled {
+                a {
+                  color: #ddd;
+                }
+              }
+            }
+          }
+          .pager {
+            background-color:#ddd;
+            border-top-left-radius: 28px;
+            border-bottom-left-radius: 28px;
+            border-top-right-radius: 28px;
+            border-bottom-right-radius: 28px;
+            height: 36px;
+          }
+        }
+        .page-count {
+          color: #ddd;
+        }
+      }
+
+      &.header-height-50 {
+        .datatable-header {
+          height: 50px !important;
+        }
+      }
+      .datatable-body-cell {
+        overflow: visible !important;
+      }
+    }
+  }
+}
+
+// media query for Small & Medium devices
+@media (max-width: 768px) {
+  .page-count {
+    display: none;
+  }
+
+  .datatable-pager {
+    text-align: center !important;
+    margin: 0 !important;
+  }
+}
+
+@media screen and (max-width: 800px) {
+  .desktop-hidden {
+    display: initial;
+  }
+
+  .mobile-hidden {
+    display: none;
+  }
+}
+
+@media screen and (min-width: 800px) {
+  .desktop-hidden {
+    display: none;
+  }
+
+  .mobile-hidden {
+    display: initial;
+  }
+}
+
+// dark layout style
+.dark-layout {
+  .datatable-header-inner,
+  .datatable-header {
+    background-color: #ddd !important;
+    border-top: 1px solid #ddd !important;
+  }
+
+  .ngx-datatable.bootstrap.core-bootstrap {
+    .datatable-footer {
+      background-color: #ddd !important;
+      .datatable-pager ul li.disabled a {
+        color: #ddd;
+      }
+      .datatable-pager a {
+        color: #ddd;
+      }
+    }
+  }
+
+  .datatable-body-row {
+    border-color: #ddd !important;
+    &.active {
+      background-color: #ddd !important;
+      color: inherit !important;
+    }
+  }
+
+  .datatable-body {
+    background-color: #ddd !important;
+  }
+
+  .pager {
+    background-color: #ddd !important;
+  }
+}
+
+.ngx-datatable.bootstrap.core-bootstrap .datatable-body-row .datatable-body-cell:last-child {
+  justify-content: end;
+  margin-right: 0.5rem;
+}
+
+.ngx-datatable.bootstrap .datatable-header .datatable-header-cell:last-child .datatable-header-cell-label {
+  display: flex;
+  justify-content: end;
+  margin-right: 0.5rem;
+}
+
+@media only screen and (max-width: 600px) {
+  .ngx-datatable.bootstrap.core-bootstrap .datatable-header .datatable-header-cell {
+    font-size: 0.6rem !important;
+  }
+  .ngx-datatable.bootstrap {
+    font-size: 10px !important;
+  }
+  .avatar .avatar-content {
+    width: 18px!important;
+    height: 18px!important;
+    font-size: 0.657rem!important;
+  }
+}
+@media only screen and (max-width: 1400px) {
+  ngx-datatable {
+    overflow: auto!important;
+  }
+}
+

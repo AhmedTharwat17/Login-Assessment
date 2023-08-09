@@ -1,0 +1,13 @@
+
+.navbar{
+    box-shadow: 0 4px 24px 0 rgba(34,41,47,.1);
+    transition: all .3s ease-in-out,background 0s,color 0s,border-color 0s;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    min-width: 0;
+    word-wrap: break-word;
+    background-color: #fff !important;
+    background-clip: border-box;
+    border: 1px solid rgba(34,41,47,.125);
+}
