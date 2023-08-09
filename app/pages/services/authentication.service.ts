@@ -2,12 +2,10 @@ import { Injectable } from "@angular/core";
 import { HttpClient } from "@angular/common/http";
 import { BehaviorSubject, Observable } from "rxjs";
 import { map } from "rxjs/operators";
-import { HttpHeaders } from "@angular/common/http";
 
 import { environment } from "src/environments/environment";
 import { LocalStorageUser } from "../models";
 import { ToastrService } from "ngx-toastr";
-import { IResult } from "../models/IResult";
 
 import { UserService } from "./user-auth.service";
 import { Router } from "@angular/router";
